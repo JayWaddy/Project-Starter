@@ -1,31 +1,21 @@
-// This is the single file output by sass. It is intended to ONLY @import other files.
-
-
 // 1 - TOOLS
-@import '1-tools/normalize'
+@import '1-tools/functions.sass'
+@import '1-tools/mixins.sass'
+@import '1-tools/variables.sass'
 
 
-// 2 - HELPERS
-@import '2-helpers/variables'
-@import '2-helpers/functions'
-@import '2-helpers/mixins'
+// 2 - BASICS
+@import '2-basics/base.sass'
+@import '2-basics/buttons.sass'
+@import '2-basics/links.sass'
+@import '2-basics/typography.sass'
 
 
-// 3 - BASICS
-@import '3-basics/base'
-@import '3-basics/buttons'
-@import '3-basics/links'
-@import '3-basics/selection-colors'
-@import '3-basics/typography'
+// 3 - LAYOUTS
+@import '3-layout/nav.sass'
 
 
-// 4 - LAYOUT
-@import '4-layout/nav'
 
+// 4 - PAGES
+// @import '4-pages/'
 
-// 5 - MODULES
-@import '5-modules/flex-video'
-
-
-// 6 - PAGES
-@import '6-pages/page-home'
