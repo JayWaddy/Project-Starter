@@ -1,6 +1,6 @@
-#Project Starter File
+# Project Starter File
 
-##A starter kit and installation guide for front-end projects.
+## A starter kit and installation guide for front-end projects.
 
 After downloading the file, you're going to need these too:
 
