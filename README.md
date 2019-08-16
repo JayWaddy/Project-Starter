@@ -23,7 +23,7 @@
       
 ### 3. Install [Sass](https://sass-lang.com/install "Sass installation guide")
 
-- Install Sass globally (Only needs to be installed *once* on your machine)
+- Install Sass globally (Only needs to be installed *once* on your machine):
     ```cmd
     npm install -g sass
     ```
@@ -43,7 +43,7 @@
 
 **Getting started on creating a completely new file.**
 
-- Change the directory to wherever the new folder will be created (the `desktop` in this case) and make a directory with the name of the project (`MyApplication`).
+- Change the directory to wherever the new folder will be created (the `desktop` in this case) and make a directory with the name of the project (`MyApplication`):
 
     ```cmd
     cd desktop
@@ -52,7 +52,7 @@
     ``` 
 **Using a file already created.**
 
-- From here, change the directory to the new folder you've just made (drag and drop folder into command line) and install necessary files, or type in `cmd` into the folder's directory.
+- From here, change the directory to the new folder you've just made (drag and drop folder into command line) and install necessary files, or type in `cmd` into the folder's directory:
 
     ```cmd
     cd /users/Name/Desktop/MyApplication
@@ -81,12 +81,12 @@
 
 
 
-- To install React globally (this only need to be installed on your machine once):
+1. To install React globally (this only need to be installed on your machine once):
     ```cmd
     npm install -g create-react-app
     ```
 
-- After React has been installed on your machine, launch your app:
+2. After React has been installed on your machine, launch your app:
 
     ```cmd
     npx create-react-app my-app
@@ -102,6 +102,11 @@
     > npx on the first line is not a typo — it’s a package runner tool that comes with npm 5.2+. [Read more in the React documentation](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app "React install documentation link").
 
     This will create a base application with default settings and files.
+
+3. Install `styled-components` and `react-router-dom`
+    ```cmd
+    npm install styled-components react-router-dom
+    ```
 
 <br>
 <br>
@@ -140,7 +145,7 @@
 
     - At this point, the App should be completely blank with no errors in the console.
 
-### 2. Setting up Gulp and JS files
+### 2. (If using SASS) Setting up Gulp and base files
 
 1. Open the root folder in the terminal, and iitialize your app:
     ```cmd
@@ -152,7 +157,34 @@
     npm install --save-dev gulp gulp-sass gulp-clean-css gulp-rename browser-sync
     ```
 
-2. In the root folder, create a file named `gulpfile.js`, and paste in the collowing code:
+3. Locate the `src` folder.
+- In this folder, create 4 new folders: `elements`, `img`, `scripts`, and `scss`.
+- Also in the `src` folder, create a file named `main.scss` and paste the folowing code:
+
+    ```scss
+    @import '0-Plugins/plugins-dir';
+    @import '1-Tools/tools-dir';
+    @import '2-Layouts/layouts-dir';
+    @import '3-Elements/elements-dir';
+    ```
+
+- In the `scss` folder, create 4 new folders: 
+
+    1. `0-Plugins`
+    - In this folder, make a file named `_plugins-dir` and `@import` any other file in the folder to it.
+
+    2. `1-Tools`
+    - In this folder, make a file named `_tools-dir` and `@import` any other file in the folder to it.
+    
+    3. `2-Layouts`
+    - In this folder, make a file named `_layouts-dir` and `@import` any other file in the folder to it.
+    
+    4. `3-Elements`
+    - In this folder, make a file named `_elements-dir` and `@import` any other file in the folder to it.
+    
+    
+
+4. In the root folder, create a file named `gulpfile.js`, and paste in the collowing code:
     ```javascript
     // Gulp plugins
     const gulp = require('gulp');
@@ -162,7 +194,7 @@
     const browserSync = require('browser-sync').create();
 
     // Sources
-    const SCSS_SOURCE = './src/scss/*.scss';
+    const SCSS_SOURCE = './src/scss/**/*.scss';
     const JS_SOURCE = './src/js/**/*.js';
     const HTML_SOURCE = './public/*.html';
 
